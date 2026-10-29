@@ -3,7 +3,7 @@ Variable 4: Rentabilidad para el marketplace.
 
 Tabla final:
   seller_id | name | en_excel (si/no) | rentable (si/no/sin dato) | margen_pct | margen_nominal_3m
-
+(Actualmente no se utiliza)
 """
 
 import pandas as pd

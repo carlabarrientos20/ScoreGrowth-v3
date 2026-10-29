@@ -12,7 +12,7 @@ Proyecto de Práctica v2.
 
 Aplicaciones del score: (1) priorización del equipo de Farming, (2) envío de mails automáticos según la palanca y (3) pronóstico de fuga. Hoy está implementada la (1).
 
-Un mismo seller puede tener **dos scores**: uno en su negocio **duro** y otro en su negocio **blando**, según las divisiones en las que venda. La unidad de análisis es `seller_id` + `division_db`, y cada seller se compara solo contra los sellers de su misma dureza.
+Un mismo seller puede tener| **dos scores**: uno en su negocio **duro** y otro en su negocio **blando**, según las divisiones en las que venda. La unidad de análisis es `seller_id` + `division_db`, y cada seller se compara solo contra los sellers de su misma dureza.
 
 ---
 
@@ -340,8 +340,6 @@ Los umbrales de brecha son los mismos de las banderas (P60 para stock y volumen,
 | Resto | Los KPIs de cada variable, para conversar con el seller |
 
 **Parámetros** (al inicio de `Farming.py`): filtros básicos (`ESTADOS_FARMING`, `REPUTACION_FARMING`, `SKU_MIN_FARMING`), umbral de fortaleza (`UMBRAL_FORTALEZA = 60`), palancas por perfil (`PALANCA_PERFIL`) y `POOL_POR_CATEGORIA`. Con `POOL_POR_CATEGORIA = 30`, por ejemplo, la hoja deja solo los 30 primeros de cada categoría. Con `None` muestra a todos.
-
-Con la corrida del 27-10-2026 había **1.147 sellers con potencial**: 847 Falta oferta y 300 Falta demanda (142 Alto, 625 Medio - Alto, 297 Medio y 83 Bajo). Suman $3.594 MM de venta en 90 días, cerca del 63% de la venta Mid-Market.
 
 **Cadencia sugerida:** correr el score el primero de cada mes y que los AM trabajen el pool por semanas, de arriba hacia abajo. Al mes siguiente se compara a los contactados contra la foto anterior. Conviene comparar valores absolutos (% de SKUs con stock, SKUs, venta en $) y no percentiles, y contra sellers no contactados, porque la estacionalidad (Black Friday, Navidad) mueve a todos.
 
